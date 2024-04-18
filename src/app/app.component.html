@@ -7,7 +7,7 @@
       </div>
   </div>
   <div class="d-flex justify-content-center">
-      <table>
+      <table >
                       <tr>
                           <th>ID</th>
                           <th>Firstname</th>
@@ -19,21 +19,23 @@
                           <th>Delete</th>
                       </tr>
 
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                      <tr *ngFor="let customer of customerList">
+                        <td>{{customer.id}}</td>
+                        <td>{{customer.fname}}</td>
+                        <td>{{customer.lname}}</td>
+                        <td>{{customer.email}}</td>
+                        <td>{{customer.age}}</td>
+                        <td>{{customer.gender}}</td>
                         <td><img src='assets/edit.svg'></td>
                         <td><img  src='assets/trash.svg'></td>
                     </tr>
               
-              </table>
-          
+         </table>
+         
   </div>
- 
+
+  {{errMsg}}
+  
  <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">

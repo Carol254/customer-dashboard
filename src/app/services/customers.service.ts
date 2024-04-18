@@ -12,12 +12,8 @@ export class CustomersService {
 
   }
 
-  getCutomers(){
-    //  return this.http.get<customerData>('http://localhost:8081/list.php');
-    return this.http.get<customerData>('http://localhost/customer/list.php', {observe: 'response',headers: {
-      'accept': 'application/json',
-    }});
-
+  getCutomers():Observable<customerData[]>{
+    return this.http.get<customerData[]>('http://localhost/customer/list.php');
   }
 
 }

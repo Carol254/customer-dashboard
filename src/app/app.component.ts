@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, afterNextRender } from '@angular/core';
 import { CustomersService } from './services/customers.service';
 import { customerData } from './models/customers';
 
@@ -11,8 +11,10 @@ import { customerData } from './models/customers';
 
 export class AppComponent implements OnInit{
   title = 'customer-dashboard';
-  private customerList:customerData[] = [];
+  customerList:any[] =[];
+  errMsg = '';
 
+  // cus;
   constructor(private cutomerService:CustomersService){}
 
   
@@ -20,10 +22,24 @@ export class AppComponent implements OnInit{
     this.getCustomerList();
   }
 
-  getCustomerList(){
-      this.cutomerService.getCutomers().subscribe(res => {
-        console.log('Response status:', res.status);
-        console.log('Body:', res.body);
-      });
-  }
+  getCustomerList() {
+    this.cutomerService.getCutomers().subscribe({
+        next: (data: any[]) => { 
+
+          if(data.length > 0){
+            console.log(data);
+            for (let i = 0; i < data.length; i++) {
+              console.log(data[i]);
+            }
+            this.customerList = data;
+
+          } else{
+            this.errMsg = "no results found!";
+          }
+
+        }
+    });
+}
+
+
 }
