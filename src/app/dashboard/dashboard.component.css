@@ -118,6 +118,13 @@ body {
     position: absolute;
     margin-right: -250px;
   }
+
+  .card{
+    width: 300px;
+    height: 200px;
+    /* border:1px solid #F8BE12; */
+
+  }
   
   @media (min-width: 992px) {
     #wrapper {

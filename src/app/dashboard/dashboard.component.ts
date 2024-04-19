@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomersService } from '../services/customers.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent  implements OnInit{
+
+  constructor(private customerService:CustomersService){}
+
+  title = 'customer-dashboard';
+  customerList:any[] =[];
+  errMsg = '';
 
   ngOnInit(){
     const button = document.querySelector('#sidebar-toggle');
@@ -22,7 +29,27 @@ export class DashboardComponent  implements OnInit{
 
       });
     }
+
+    this.getCustomerList();
   }
   
-;
+  getCustomerList() {
+    this.customerService.getCutomers().subscribe({
+        next: (data: any[]) => { 
+
+          if(data.length > 0){
+            console.log(data);
+            for (let i = 0; i < data.length; i++) {
+              console.log(data[i]);
+            }
+            this.customerList = data;
+
+          } else{
+            this.errMsg = "no results found!";
+          }
+
+        }
+    });
+}
+
 }
