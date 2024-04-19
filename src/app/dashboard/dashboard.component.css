@@ -34,7 +34,12 @@ body {
   #wrapper.toggled #sidebar-wrapper {
     width: 250px;
   }
-  
+  .side-nav-item{
+    visibility: visible;
+  }
+  .side-nav-item.toggled{
+    visibility: hidden;
+  }
   .sidebar-brand {
     position: absolute;
     top: 0;
@@ -74,9 +79,10 @@ body {
     color: #fff;
     background: #F8BE12;
   }
-  .sidebar-nav > li > a i.fa {
+  .sidebar-nav > li > a i.bi {
     font-size: 24px;
-    width: 60px;
+    width: 50px;
+    color:#fff;
   }
   
   #navbar-wrapper {
