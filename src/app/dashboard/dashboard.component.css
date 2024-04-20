@@ -87,11 +87,13 @@ body {
   
   #navbar-wrapper {
       width: 100%;
-      position: absolute;
+      position: fixed;
       z-index: 2;
+      top:0;
   }
   #wrapper.toggled #navbar-wrapper {
-      position: absolute;
+      position: fixed;
+      top:0;
       margin-right: -250px;
   }
   #navbar-wrapper .navbar {
@@ -120,10 +122,15 @@ body {
   }
 
   .card{
+    width: 400px;
+    height: 300px;
+    border: none;
+  }
+  .card-img{
+    border-radius: 8px;
     width: 300px;
-    height: 200px;
-    /* border:1px solid #F8BE12; */
-
+    height: 300px;
+    object-fit: contain;
   }
   
   @media (min-width: 992px) {
@@ -144,7 +151,10 @@ body {
     }
     
     #wrapper.toggled #navbar-wrapper {
-      position: absolute;
+      position: fixed;
+      top:0;
+      overflow: hidden;
+      width: 100%;
       margin-right: -190px;
   }
     
@@ -154,7 +164,8 @@ body {
     }
   
     #navbar-wrapper {
-      position: relative;
+      position: fixed;
+      top:0;
     }
   
     #wrapper.toggled {
@@ -166,7 +177,12 @@ body {
       top: 0;
     }
   
-    #wrapper.toggled #navbar-wrapper,
+    #wrapper.toggled #navbar-wrapper{
+      position: fixed;
+      top:0;
+      margin-right: 60px;
+    }
+  
     #wrapper.toggled #content-wrapper {
       position: relative;
       margin-right: 60px;
