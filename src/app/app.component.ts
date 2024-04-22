@@ -19,27 +19,10 @@ export class AppComponent implements OnInit{
 
   
   ngOnInit(): void {
-    this.getCustomerList();
+ 
   }
 
-  getCustomerList() {
-    this.cutomerService.getCutomers().subscribe({
-        next: (data: any[]) => { 
 
-          if(data.length > 0){
-            console.log(data);
-            for (let i = 0; i < data.length; i++) {
-              console.log(data[i]);
-            }
-            this.customerList = data;
-
-          } else{
-            this.errMsg = "no results found!";
-          }
-
-        }
-    });
-}
 
 
 }
