@@ -2,35 +2,41 @@
 
     <aside id="sidebar-wrapper">
       <div class="sidebar-brand">
-        <h2 class="side-nav-item">C-Enterprises</h2>
+        <h2 class="side-nav-item" style="text-decoration: underline; text-decoration-color: #F8BE12;">C-Enterprises</h2>
       </div>
       <ul class="sidebar-nav">
-        <li class="active">
-          <a href="#"><img src="assets/home.svg"><span class="side-nav-item">Home</span></a>
+        <li class="">
+          <a  routerLink="/home"><i class="fa fa-tachometer" aria-hidden="true"></i><span class="side-nav-item">Dashboard</span></a>
         </li>
         <li>
-          <a href="#"><img src="assets/file.svg"> <span class="side-nav-item">Details</span></a>
+          <a routerLink="/reports"><i class="fa fa-line-chart" aria-hidden="true"></i> <span class="side-nav-item">Reports/Analytics</span></a>
         </li>
         <li>
-          <a href="#"><img src="assets/users.svg"> <span class="side-nav-item">Customers</span></a>
+          <a routerLink="/clients"><i class="fa fa-users" aria-hidden="true"></i> <span class="side-nav-item">Customers</span></a>
+        </li>
+       
+        <li>
+          <a routerLink="/support"><i class="fa fa-question-circle" aria-hidden="true"></i> <span class="side-nav-item">Support</span></a>
+        </li>
+        <li>
+          <a routerLink="/settings"><i class="fa fa-cogs" aria-hidden="true"></i><span class="side-nav-item">Settings</span></a>
         </li>
       </ul>
     </aside>
   
     <div id="navbar-wrapper">
       <nav class="navbar">
-        <div class="d-flex justify-content-between">
-          <div class="navbar-header">
-           <span class="navbar-toggler-icon" id="sidebar-toggle"></span>
+        <div class="row">
+          <div class="d-flex">
+              <div class="navbar-header">
+              <span class="navbar-toggler-icon" id="sidebar-toggle"></span>
+              </div>
+  
+              <!-- <form class="d-flex" role="search">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <div class="btn" type="submit"> <img src='assets/search.svg'></div>
+              </form> -->
           </div>
-
-          <div class="ml-auto">
-            <form class="d-flex" role="search">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <div class="btn" type="submit"> <img src='assets/search.svg'></div>
-            </form>
-          </div>
-          
         </div>
       </nav>
     </div>

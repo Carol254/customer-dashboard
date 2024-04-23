@@ -19,7 +19,20 @@ export class AppComponent implements OnInit{
 
   
   ngOnInit(): void {
- 
+    const button = document.querySelector('#sidebar-toggle');
+    const wrapper = document.querySelector('#wrapper');
+    const elements: NodeListOf<Element> = document.querySelectorAll('.side-nav-item');
+
+    if (button && wrapper) {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        wrapper.classList.toggle('toggled');
+       elements.forEach((el)=>{
+        el.classList.toggle('toggled');
+       });
+
+      });
+    }
   }
 
 

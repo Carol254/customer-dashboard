@@ -44,7 +44,8 @@ body {
     position: absolute;
     top: 0;
     width: 250px;
-    text-align: center;
+    text-indent: 22px;
+    /* text-align: center; */
     padding: 20px 0;
   }
   .sidebar-brand h2 {
@@ -52,6 +53,7 @@ body {
     font-weight: 600;
     font-size: 24px;
     color: #fff;
+    
   }
   
   .sidebar-nav {
@@ -187,6 +189,13 @@ body {
       position: relative;
       margin-right: 60px;
     }
+
+    .side-nav-item{
+      visibility: visible;
+    }
+    .side-nav-item.toggled{
+      visibility: hidden;
+    }
   }
   
   @media (min-width: 768px) and (max-width: 991px) {
@@ -196,6 +205,12 @@ body {
   
     #sidebar-wrapper {
       width: 60px;
+    }
+    .side-nav-item{
+      visibility: hidden;
+    }
+    .side-nav-item.toggled{
+      visibility: visible;
     }
     
   #wrapper.toggled #navbar-wrapper {
@@ -235,6 +250,12 @@ body {
   
     #sidebar-wrapper {
       width: 0;
+    }
+    .side-nav-item{
+      visibility: hidden;
+    }
+    .side-nav-item.toggled{
+      visibility: visible;
     }
   
     #wrapper.toggled #sidebar-wrapper {

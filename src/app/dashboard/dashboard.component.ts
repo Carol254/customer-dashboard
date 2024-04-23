@@ -1,7 +1,7 @@
-import { customerData } from './../models/customers';
 import { Component, OnInit } from '@angular/core';
 import { CustomersService } from '../services/customers.service';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -18,25 +18,11 @@ export class DashboardComponent  implements OnInit{
   customerId!: any;
 
   ngOnInit(){
-    const button = document.querySelector('#sidebar-toggle');
-    const wrapper = document.querySelector('#wrapper');
-    const elements: NodeListOf<Element> = document.querySelectorAll('.side-nav-item');
-
-    if (button && wrapper) {
-      button.addEventListener('click', (e) => {
-        e.preventDefault();
-        wrapper.classList.toggle('toggled');
-       elements.forEach((el)=>{
-        el.classList.toggle('toggled');
-       });
-
-      });
-    }
-
     this.getCustomerList();
-  
   }
-  
+
+
+
   getCustomerList() {
     this.customerService.getCustomers().subscribe({
         next: (data: any[]) => { 

@@ -1,13 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
-img{
-    cursor: pointer;
-    vertical-align: unset !important;
-}
 
+table{
+    width: 100%;
+}
 table tr th, table tr td {
     border-color: #e9e9e9;
-    padding: 12px 8px;
-    vertical-align: middle;
+    padding: 10px 0px;
+    /* vertical-align: middle; */
 }
 table tr th{
     border-bottom: 3px solid #f8be12;

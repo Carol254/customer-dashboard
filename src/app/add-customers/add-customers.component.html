@@ -1,31 +1,30 @@
 <div class="mt-5">
     <div class='container'>
         <div class="text-center"><h3>ADD-CUSTOMER</h3></div>
-        <form method='POST' action='http://localhost/customer/add.php'>
-            <input type='hidden' name='c_id' value=''>
+        <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
             <div class='form-group'>
                 <label for='firstname'>First Name</label>
-                <input type='text' class='form-control focus-ring focus-ring-light' id='firstname' name='fname' aria-describedby='' value=''>
+                <input type='text' class='form-control focus-ring focus-ring-light' id='firstname' formControlName='fname' >
             </div>
             <div class='form-group'>
                 <label for='lastname'>Last Name</label>
-                <input type='text' class='form-control focus-ring focus-ring-light' id='lastname' name='lname' aria-describedby='' value=''>
+                <input type='text' class='form-control focus-ring focus-ring-light' id='lastname' formControlName='lname' >
             </div>
             <div class='form-group'>
                 <label for='email'>Email</label>
-                <input type='text' class='form-control focus-ring focus-ring-light' id='email' name='email' aria-describedby='' value=''>
+                <input type='text' class='form-control focus-ring focus-ring-light' id='email' formControlName='email' >
             </div>
             <div class='form-group'>
                 <label for='age'>Age</label>
-                <input type='text' class='form-control focus-ring focus-ring-light' id='age' name='age' aria-describedby='' value=''>
+                <input type='text' class='form-control focus-ring focus-ring-light' id='age' formControlName='age' >
             </div>
             <div class='form-group'>
                 <label for='gender'>Gender</label>
-                <input type='text' class='form-control focus-ring focus-ring-light' id='gender' name='gender' aria-describedby='' value=''>
+                <input type='text' class='form-control focus-ring focus-ring-light' id='gender' formControlName='gender' >
             </div>
     
     
-            <button type='submit' class='submit-btn mt-2' value='Save'>UPDATE</button>
+            <button type='submit' class='submit-btn mt-2' value='Save'>SAVE</button>
     
     
             </form>

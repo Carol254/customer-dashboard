@@ -1,7 +1,7 @@
 export interface customerData{
-    id: number;
-    fname: string;
-    lname: string;
+    id: string;
+    firstname: string;
+    lastname: string;
     email: string;
     age: string;
     gender: string;
