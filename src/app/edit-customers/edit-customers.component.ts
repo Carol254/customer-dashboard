@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CustomersService } from '../services/customers.service';
 import { customerData } from '../models/customers';
-import { FormBuilder,FormControl,FormGroup } from '@angular/forms';
+import { FormBuilder,FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-customers',
@@ -11,20 +11,42 @@ import { FormBuilder,FormControl,FormGroup } from '@angular/forms';
 })
 export class EditCustomersComponent implements OnInit{
 
+  customerForm!: FormGroup;
+  formData: any;
+
   constructor(private route:ActivatedRoute ,private customerService:CustomersService, private formBuilder:FormBuilder ){}
 
-  customerDetails!: customerData;
-
   ngOnInit(): void {
-    const customerId = this.route.snapshot.paramMap.get('id');
 
-    this.customerService.editCustomer(customerId).subscribe({
-      next:(res)=>{
-  
-      }
+    this.customerForm = this.formBuilder.group({
+      id:[],
+      firstname:[''],
+      lastname:[''],
+      email:[''],
+      age:[''],
+      gender:[''],
+      status:['']
     });
+
+    this.getFormData();
+    
   }
 
+  getFormData(){
+    const customerId = this.route.snapshot.paramMap.get('id');
+    this.customerService.editCustomer(customerId).subscribe(
+      data =>{
+        console.log('from edit',data);
+        
+        this.formData = data;
+        this.populateForm(); 
+      }
+    );
+  }
+
+  populateForm() {
+    this.customerForm.patchValue(this.formData);
+  }
 
 
 }

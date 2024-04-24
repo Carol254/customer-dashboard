@@ -50,6 +50,7 @@ export class DashboardComponent  implements OnInit{
     this.customerService.deleteCustomer(c_id).subscribe((res)=>{
       if (res.success) { 
         window.alert('Deleted successfully');
+        window.location.reload();
       } else {
         console.error('Deletion failed:', res);
       }

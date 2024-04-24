@@ -5,4 +5,6 @@ export interface customerData{
     email: string;
     age: string;
     gender: string;
+    status:string;
+    image:string;
 }

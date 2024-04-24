@@ -22,7 +22,7 @@
                         <div class="banner d-flex justify-content-between">
                             <h3 class="my-2">CUSTOMER DATA</h3>
                             <div class="d-flex ml-auto">
-                                <div><a class="btn btn-success mt-1" routerLink="/add-customer"><span><img src="assets/add.svg" ></span>ADD</a></div>
+                                <div><a class="btn btn-success mt-1" routerLink="/add-customer"><span class=""><img src="assets/add.svg" ></span>ADD</a></div>
                                 <div><button class="btn btn-danger mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal"><span><img src="assets/trash2.svg" ></span>REMOVE</button></div>
                             </div>
                         </div>
@@ -36,6 +36,7 @@
                                     <th>Email</th>
                                     <th>Age</th>
                                     <th>Gender</th>
+                                    <th>Status</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
@@ -47,6 +48,7 @@
                                     <td>{{customer.email |truncate:15}}</td>
                                     <td>{{customer.age}}</td>
                                     <td>{{customer.gender}}</td>
+                                    <td>{{customer.status}}</td>
                                     <td><img src='assets/edit.svg' (click)="editCustomer(customer.id)"></td>
                                     <td><img  src='assets/trash.svg' (click)="deleteCustomer(customer.id)"></td>
                                 </tr>
