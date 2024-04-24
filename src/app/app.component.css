@@ -86,6 +86,11 @@ body {
     width: 50px;
     color:#fff;
   }
+
+  li> .active-page{
+    color: #fff!important;
+    background: #F8BE12;
+  }
   
   #navbar-wrapper {
       width: 100%;
