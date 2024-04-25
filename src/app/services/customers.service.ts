@@ -13,10 +13,12 @@ export class CustomersService {
 
   }
 
-  // Step 1
-  httpHeaders: HttpHeaders = new HttpHeaders({
-    Accept:'application/json'
-  });
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json'
+    })
+  };
 
   getCustomers():Observable<customerData[]>{
     return this.http.get<customerData[]>('http://localhost/customer/list.php');
@@ -27,7 +29,7 @@ export class CustomersService {
   }
 
   updateCustomer(custDetails:customerData):Observable<customerData>{
-    return this.http.post<customerData>('http://localhost/customer/update.php',custDetails);
+    return this.http.put<customerData>('http://localhost/customer/update.php', custDetails ,this.httpOptions );
   }
 
   deleteCustomer(id: any): Observable<any> {
@@ -35,8 +37,8 @@ export class CustomersService {
     return this.http.delete<customerData[]>('http://localhost/customer/delete.php',{params:params});
   }
 
-  addCustomer(custData:any):Observable<Response>{
-    return this.http.post<Response>('http://localhost/customer/add.php',custData,{headers:this.httpHeaders});
+  addCustomer(custData:customerData):Observable<customerData>{
+    return this.http.post<customerData>('http://localhost/customer/add.php',custData,this.httpOptions);
   }
 
 }

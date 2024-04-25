@@ -56,5 +56,9 @@ export class DashboardComponent  implements OnInit{
       }
     });
   }
+
+  getRecords(c_id:number){
+    this.router.navigate(["/reports",{id:c_id}]);
+  }
   
 }

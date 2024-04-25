@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CustomersService } from '../services/customers.service';
 import { customerData } from '../models/customers';
 import { FormBuilder,FormGroup } from '@angular/forms';
@@ -12,9 +12,9 @@ import { FormBuilder,FormGroup } from '@angular/forms';
 export class EditCustomersComponent implements OnInit{
 
   customerForm!: FormGroup;
-  formData: any;
+  formData!: customerData;
 
-  constructor(private route:ActivatedRoute ,private customerService:CustomersService, private formBuilder:FormBuilder ){}
+  constructor(private route:ActivatedRoute ,private customerService:CustomersService, private formBuilder:FormBuilder,private router:Router ){}
 
   ngOnInit(): void {
 
@@ -25,7 +25,8 @@ export class EditCustomersComponent implements OnInit{
       email:[''],
       age:[''],
       gender:[''],
-      status:['']
+      status:[''],
+      image:['']
     });
 
     this.getFormData();
@@ -48,5 +49,15 @@ export class EditCustomersComponent implements OnInit{
     this.customerForm.patchValue(this.formData);
   }
 
+
+  onUpdate(){
+    console.log(this.customerForm.value);
+
+    this.customerService.updateCustomer(this.customerForm.value).subscribe(
+      (res) =>{
+        console.log('from update',res);
+        this.router.navigate(['/home']);
+      });
+  }
 
 }
