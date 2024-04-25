@@ -9,7 +9,7 @@ body{
     margin-bottom: 30px;
 }
 p{
-color: #8A98AC;    
+color: #000;    
 }
 .table-borderless td {
     border: 0 !important;
@@ -18,7 +18,7 @@ color: #8A98AC;
     background-color: #eeeeee !important;
 }
 .table td {
-    color: #8A98AC;
+    color: #000;
     vertical-align: middle;
     border-top: 1px solid rgba(0, 0, 0, 0.03);
     padding: 0.6rem;

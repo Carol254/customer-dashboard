@@ -9,10 +9,10 @@
                     <img src="assets/client-4.jpg" width="100%">
                 </div> 
                 <div class="col-md-4">
-                    <img src="assets/graph.jpg" width="100%"> 
+                    <!-- <img src="assets/graph.jpg" width="100%">  -->
                 </div>
                 <div class="col-md-4">
-                    <img src="assets/client-4.jpg" width="100%">
+                   <img src="assets/graph.jpg" width="100%"> 
                 </div>
             </div>
 
@@ -28,7 +28,7 @@
                         </div>
                         
                         <div class="">
-                            <table>
+                            <table >
                                 <tr>
                                     <th>ID</th>
                                     <th>Firstname</th>
@@ -41,7 +41,7 @@
                                     <th>Delete</th>
                                 </tr>
     
-                                <tr *ngFor="let customer of customerList" (click)="getRecords(customer.id)">
+                                <tr *ngFor="let customer of customerList" (click)="getRecords(customer.id)" class="table-hover">
                                     <td>{{customer.id}}</td>
                                     <td>{{customer.fname}}</td>
                                     <td>{{customer.lname}}</td>

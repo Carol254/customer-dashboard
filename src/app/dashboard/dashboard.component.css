@@ -9,3 +9,7 @@
   height: 300px;
   object-fit: contain;
 }
+.table-hover:hover{
+  background-color: #eee;
+  cursor: pointer;
+}
